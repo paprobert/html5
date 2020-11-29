@@ -1,0 +1,44 @@
+<div id="contact" xmlns="http://www.w3.org/1999/html">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h1 class="page-heading">Kapcsolat</h1>
+    <div id="form">
+      <div>
+        <label for="name">Teljes név:</label><br/>
+        <input matInput type="text" id="name" name="name" placeholder="Teljes név" formControlName="name" required />
+        <div class="error" *ngIf="form.get('name').touched && form.get('name').hasError('required')">
+          A mező kitöltése kötelező!
+        </div>
+      </div>
+      <div>
+        <label for="email">Email:</label><br/>
+        <input matInput type="text" id="email" name="email" formControlName="email" required email />
+        <div class="error" *ngIf="form.get('email').touched && form.get('email').hasError('required')">
+          A mező kitöltése kötelező!
+        </div>
+        <div class="error" *ngIf="form.get('email').touched && form.get('email').hasError('email')">
+          A mező formátuma email kell, hogy legyen!
+        </div>
+      </div>
+      <div>
+        <label for="subject">Tárgy:</label><br/>
+        <input matInput type="text" id="subject" name="subject" formControlName="subject" required />
+        <div class="error" *ngIf="form.get('subject').touched && form.get('subject').hasError('required')">
+          A mező kitöltése kötelező!
+        </div>
+      </div>
+      <div>
+        <label for="message">Üzenet:</label><br/>
+        <textarea matInput id="message" name="body" cols="30" rows="10" formControlName="message" required></textarea>
+        <div class="error" *ngIf="form.get('message').touched && form.get('message').hasError('required')">
+          A mező kitöltése kötelező!
+        </div>
+      </div>
+      <div>
+        <input type="submit" id="submit" value="Küldés"/>
+        <p *ngIf="showSuccessfulContactMessage">
+          Sikeres küldés. Kérem várjon, amíg jelentkezünk.
+        </p>
+      </div>
+    </div>
+  </form>
+</div>
