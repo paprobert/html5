@@ -37,7 +37,6 @@ export class ContactComponent implements OnInit {
     this.showSuccessfulContactMessage = false;
 
     if (this.form.valid) {
-
       const contactMessage: Contact = {
         name: this.form.get('email').value,
         email: this.form.get('name').value,
@@ -50,6 +49,7 @@ export class ContactComponent implements OnInit {
       this.showSuccessfulContactMessage = true;
       this.form.reset()
     } else {
+      this.form.markAllAsTouched();
       this.error = null;
     }
   }

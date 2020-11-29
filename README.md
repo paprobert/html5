@@ -1,3 +1,10 @@
+# Leírás
+
+Feladatom során egy kis bemutatkozó oldalt készítettem el Angular 9-ben a KMOOCról és a HTML 5 kurzusról, továbbá készítettem hozzá egy kapcsolat űrlapot, ahol alapvető adatokat lehet megadni és azokat validálni.
+
+Youtube link a prezentációhoz: https://youtu.be/4u8FeVzvBZs
+
+
 # Html5AngularProject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.12.
